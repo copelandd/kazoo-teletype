@@ -77,6 +77,7 @@ send_email(Emails0, Subject, RenderedTemplates, Attachments) ->
             ,email_parameters([{<<"To">>, To}
                               ,{<<"Cc">>, props:get_value(<<"cc">>, Emails)}
                               ,{<<"Bcc">>, props:get_value(<<"bcc">>, Emails)}
+                              ,{<<"X-Teletype-Log-ID">>, kz_log:get_callid()}
                               ]
                              ,[{<<"From">>, From}
                               ,{<<"Reply-To">>, props:get_value(<<"reply_to">>, Emails)}

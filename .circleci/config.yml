@@ -248,7 +248,7 @@ jobs:
           command: ERLC_OPTS='-DPROPER' make -C ${KAZOO_ROOT} compile-test-core
       - run:
           name: Running Eunit tests
-          command: make -C "$KAZOO_ROOT/$APP_PATH" compile-test eunit
+          command: make -C "$KAZOO_ROOT/$APP_PATH" eunit
       - run:
           name: Save test results
           command: |

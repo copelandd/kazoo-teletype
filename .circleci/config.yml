@@ -245,7 +245,7 @@ jobs:
             - deps-v1-{{ checksum "~/2600hz/kazoo/make/deps.mk" }}-{{ checksum "/usr/local/lib/erlang/releases/RELEASES" }}
       - run:
           name: Compiling Kazoo core for unit test environment
-          command: ERLC_OPTS='-DPROPER' make -C ${KAZOO_ROOT}/core compile-test
+          command: ERLC_OPTS='-DPROPER' make -C ${KAZOO_ROOT} compile-test-core
       - run:
           name: Running Eunit tests
           command: make -C "$KAZOO_ROOT/$APP_PATH" eunit

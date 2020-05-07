@@ -247,6 +247,11 @@ jobs:
           name: Compiling Kazoo core for unit test environment
           command: ERLC_OPTS='-DPROPER' make -C ${KAZOO_ROOT} compile-test-core
       - run:
+          name: Add Crossbar to the mix for schemas and such
+          command: |
+            DEPS=crossbar make fetch-apps
+            make -C applications/crossbar
+      - run:
           name: Running Eunit tests
           command: make -C "$KAZOO_ROOT/$APP_PATH" eunit
       - run:
